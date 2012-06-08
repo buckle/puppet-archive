@@ -49,7 +49,11 @@ define archive::download (
       ensure => present,
     }
   }
-
+  
+  Exec {
+    path => ["/bin", "/usr/bin"],	
+  }
+  	
   case $checksum {
     true : {
       case $digest_type {
