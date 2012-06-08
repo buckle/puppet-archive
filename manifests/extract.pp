@@ -44,6 +44,10 @@ define archive::extract (
     $extract_dir = "${target}/${name}"
   }
   
+  Exec {
+    path => ["/bin", "/usr/bin"],	
+  }
+  
   case $ensure {
     present: {
 
