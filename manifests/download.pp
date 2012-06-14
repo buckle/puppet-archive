@@ -127,7 +127,7 @@ define archive::download (
         creates   => "${src_target}/${name}",
         logoutput => true,
         timeout   => $timeout,
-        require   => Package["curl"],
+        #require   => Package["curl"],
         notify => $checksum ? {
           true    => Exec["rm-on-error-${name}"],
           default => undef,
