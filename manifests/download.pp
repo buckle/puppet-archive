@@ -83,7 +83,7 @@ define archive::download (
               creates => "${src_target}/${name}.${digest_type}",
               timeout => $timeout,
               notify  => Exec["download archive $name and check sum"],
-              require => Package["curl"],
+              #require => Package["curl"],
             }
     
           }
